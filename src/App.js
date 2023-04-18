@@ -1,11 +1,14 @@
-
 import './App.css';
 
 import Routes from './routes';
+import PokemonProvider from './context/pokemons/Provider';
 
 function App() {
   return (
-    <Routes />
+    <PokemonProvider>
+      <Routes />
+    </PokemonProvider>
+
   );
 }
 
