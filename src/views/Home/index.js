@@ -2,10 +2,14 @@ import { useContext, useEffect } from "react";
 import PokemonContext from "../../context/pokemons";
 
 export default function Home() {
-    const { showAlert } = useContext(PokemonContext);
+    const { getPokemons, pokemons } = useContext(PokemonContext);
 
     useEffect(() => {
-        showAlert();
+        getPokemons().catch(null);
     }, []);
-    return (<div>Home</div>);
+
+    console.log(pokemons);
+    return (<div>
+
+    </div>);
 }
