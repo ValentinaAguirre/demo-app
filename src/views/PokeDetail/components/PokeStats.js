@@ -1,4 +1,4 @@
-/*export default function PokeStats({ stats }) {
+export default function PokeStats({ stats }) {
     return (
         <>
             {stats?.map(({ stat, base_stat }, index) => (
@@ -11,4 +11,4 @@
             ))}
         </>
     );
-}*/
+}

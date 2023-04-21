@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useContext } from "react";
 import PokemonContext from "../../context/pokemons";
-
-//import PokeStats from "./components/PokeStats";
+import PokeStats from "./components/PokeStats"
 import Loading from "../../components/Loading/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 //import usePokemonStore from "../../zustand/stores/pokemons";
@@ -26,21 +25,13 @@ export default function PokeDetail() {
                     <p>{`Name: ${pokemonDetail?.name}`}</p>
                     <p>{`Peso: ${pokemonDetail?.weight} kgs.`}</p>
                     <p>{`Altura: ${pokemonDetail?.height} cms.`}</p>
+                    <div>
+                        <h3 style={{ marginTop: 30, marginBottom: 15 }}>Habilidades</h3>
+                        <PokeStats stats={pokemonDetail?.stats ?? []} />
+                    </div>
 
                 </>
             )}
         </div>
     );
 }
-/*export default function PokeDetail() {
-    const { id } = useParams();
-    const { getPokemonDetail, pokemonDetail, isLoading, hasError, errorMessage } = useContext(PokemonContext);
-
-    useEffect(() => {
-        getPokemonDetail(id).catch(null);
-    }, []);
-    console.log(pokemonDetail)
-    return (<div>
-        PokeDetail
-    </div>)
-}*/
