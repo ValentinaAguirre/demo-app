@@ -1,13 +1,13 @@
-import { useEffect, useContext } from "react";
-//import shallow from "zustand/shallow";
-import PokemonContext from "../../context/pokemons";
+import { useEffect } from "react";
+import { shallow } from "zustand/shallow";
+// import PokemonContext from "../../context/pokemons";
 import PokemonList from "./components/PokemonList";
 import Loading from "../../components/Loading/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
-//import usePokemonsStore from "../../zustand/stores/pokemons";
+import usePokemonsStore from "../../zustand/stores/pokemons";
 
 export default function Home() {
-    /*const {
+    const {
         getPokemons,
         pokemons,
         isLoading,
@@ -19,8 +19,8 @@ export default function Home() {
         isLoading: state.isLoading,
         hasError: state.hasError,
         errorMessage: state.errorMessage
-    }), shallow); // zustand*/
-    const { getPokemons, pokemons, isLoading, hasError, errorMessage } = useContext(PokemonContext);
+    }), shallow); // zustand
+    // const { getPokemons, pokemons, isLoading , hasError, errorMessage } = useContext(PokemonContext);
 
     useEffect(() => {
         getPokemons().catch(null);
